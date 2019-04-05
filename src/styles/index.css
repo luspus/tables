@@ -1,0 +1,96 @@
+body {
+  background: #C5DBEC;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+}
+#root {
+  padding: 20px;
+}
+table {
+  margin: 15px 0;
+  background: #fff;
+  border-spacing: 0;
+  font-size: 15px;
+  width: 100%;
+  max-width: 1200px;
+  overflow-x: scroll;
+}
+
+.popup table {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  table-layout: fixed;
+}
+tr, td {
+  border: 0.5px solid #e4e4e4;
+  border-left:0;
+  padding: 5px;
+}
+.thead td {
+  background: #454345;
+  color: #fff;
+  padding: 5px;
+  font-weight: normal;
+  margin: 0;
+}
+input {
+  max-width: 97%;
+}
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #16166f;
+  font-size: 15px;
+}
+.navbar__btn button img {
+  width: 17px;
+  padding: 4px 4px 4px 0;
+  height: 17px;
+  position: relative;
+  top: 7px;
+}
+.navbar__btn.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+button:focus {
+  outline: none;
+}
+.layer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #b4b2b2;
+  opacity: 0.7;
+}
+.popup table {
+  position: absolute;
+  top: 25%;
+  font-size: 13px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.popup .btn, .btn td {
+  border: 0;
+}
+.popup button {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 3px 7px;
+  margin: 10px;
+}
+.input__row td {
+  padding: 0;
+}
+.btn td button {
+  display: inline;
+}
+.repost__btn img{
+   transform: scale(1, -1) rotate(-160deg);
+   position: relative;
+   right: 5px;
+}
