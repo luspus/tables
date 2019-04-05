@@ -1,19 +1,18 @@
 const getDataToTable = (from, to) => dispatch => {
-    const asyncGetRows = () => {
+    const asyncGetData = () => {
         return dispatch => {
             fetch(`http://urban-trans.net/ua/admin/get_photos_new.php?from=${from}&to=${to}`)
             .then(response => response.json())
             .then(res => {
-                console.log(res)
                 const data = res.data;
-                dispatch({ type: 'GET_DATA_TO_TABLE', data })
+                dispatch({type: 'GET_DATA_TO_TABLE', data})
             })
             .catch(errors => {
                 console.log(errors)
             })
         }
     };
-    dispatch(asyncGetRows())
+    dispatch(asyncGetData());
 };
 
 const togglePopup = val => ({
@@ -26,9 +25,8 @@ const saveTable = obj => ({
     obj
 });
 
-const deleteAll = click => ({
-    type: 'DELETE_ALL',
-    click
+const deleteAll = () => ({
+    type: 'DELETE_ALL'
 });
 
 const cleanAll = () => ({

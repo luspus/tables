@@ -1,8 +1,7 @@
 const initialState = {
     topTable: [],
     bottomTable: [],
-    togglePopup: false,
-    play: false
+    togglePopup: false
 }
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -33,8 +32,7 @@ export default (state = initialState, action) => {
         case 'GET_DATA_TO_TABLE':
             return {
                 ...state,
-                bottomTable: [...state.bottomTable, ...action.data],
-                play: true
+                bottomTable: [...state.bottomTable, ...action.data]
             };
 
         default:

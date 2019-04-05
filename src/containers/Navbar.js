@@ -9,27 +9,41 @@ import pauseBtn from '../img/pause.png';
 import update from '../img/update.png';
 
 class Navbar extends Component {
-    render () {
-        const { togglePopup, deleteAll, getDataToTable, play } = this.props;
+    constructor (props) {
+        super(props);
+        this.timerId = '';
+        this.state = {
+            play: false
+        }
+    }
+    toggleSwitch(p) {
         let from = 0;
         let to = 5;
+        if(this.state.play === false) {
+            this.timerId = setInterval(() => {
+                p.getDataToTable(from, to);
+                from = from + 5;
+                to = to + 5;
+            }, 1000);
+            this.setState({play: true})
+        } else {
+            clearTimeout(this.timerId);
+            this.setState({play: false});
+        }
+    }
+    render () {
+        const { togglePopup, deleteAll } = this.props;
+        const { play } = this.state;
         return(
             <div className='navbar__btn'>
-                { play ?
-                    <button onClick={() => {
-                        console.log('stop')
-                    }}>
-                        <img src={pauseBtn} />
+                {play
+                    ?
+                    <button onClick={() => this.toggleSwitch()}>
+                        <img src={pauseBtn}/>
                         Pause
                     </button>
-                :
-                    <button onClick={() => {
-                        setInterval(() => {
-                        getDataToTable(from, to);
-                        from = from + 5;
-                        to = to + 5;
-                        }, 2000);
-                        }}>
+                    :
+                    <button onClick={() => this.toggleSwitch(this.props)}>
                         <img src={playBtn} alt='play'/>
                         Play
                     </button>
@@ -51,16 +65,10 @@ class Navbar extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        play: state.play
-    };
-};
-
 const mapDispatchToProps = dispatch => ({
     togglePopup: (val) => dispatch(ACTIONS.togglePopup(val)),
-    deleteAll: (val) => dispatch(ACTIONS.deleteAll(val)),
-    getDataToTable: (from, to) => dispatch(ACTIONS.getDataToTable(from, to)),
+    deleteAll: () => dispatch(ACTIONS.deleteAll()),
+    getDataToTable: (from, to) => dispatch(ACTIONS.getDataToTable(from, to))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+export default connect(null, mapDispatchToProps)(Navbar);
