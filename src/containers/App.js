@@ -1,9 +1,9 @@
 import React, { Component }  from 'react';
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
-import Table from '../component/Table';
+import Table from '../components/Table';
 import PopupTable from './PopupTable';
-import TableBottom from '../component/TableBottom';
+import TableBottom from '../components/TableBottom';
 import BottomTableNav from './BottomTableNav';
 
 class App extends Component {

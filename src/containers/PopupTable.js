@@ -1,7 +1,7 @@
 import React, { Component }  from 'react';
 import { connect } from 'react-redux';
 import ACTIONS from '../actions/';
-import Thead from '../component/Thead';
+import Thead from '../components/Thead';
 
 class PopupTable extends Component {
     constructor(props) {

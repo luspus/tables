@@ -17,11 +17,7 @@ class Navbar extends Component {
             <div className='navbar__btn'>
                 { play ?
                     <button onClick={() => {
-                        clearInterval(() => {
-                        getDataToTable(from, to);
-                        from = from + 5;
-                        to = to + 5;
-                        }, 2000);
+                        console.log('stop')
                     }}>
                         <img src={pauseBtn} />
                         Pause
