@@ -2,11 +2,11 @@ import React, { Component }  from 'react';
 import { connect } from 'react-redux';
 import ACTIONS from '../actions/';
 
-import add from '../img/add.png';
-import del from '../img/del.png';
-import playBtn from '../img/play.png';
-import pauseBtn from '../img/pause.png';
-import update from '../img/update.png';
+import add from '../assets/img/add.png';
+import del from '../assets/img/del.png';
+import playBtn from '../assets/img/play.png';
+import pauseBtn from '../assets/img/pause.png';
+import update from '../assets/img/update.png';
 
 class Navbar extends Component {
     constructor (props) {
@@ -24,7 +24,7 @@ class Navbar extends Component {
                 p.getDataToTable(from, to);
                 from = from + 5;
                 to = to + 5;
-            }, 1000);
+            }, 10000);
             this.setState({play: true})
         } else {
             clearTimeout(this.timerId);
@@ -39,12 +39,12 @@ class Navbar extends Component {
                 {play
                     ?
                     <button onClick={() => this.toggleSwitch()}>
-                        <img src={pauseBtn}/>
+                        <img src={pauseBtn} alt='pause'/>
                         Pause
                     </button>
                     :
                     <button onClick={() => this.toggleSwitch(this.props)}>
-                        <img src={playBtn} alt='play'/>
+                        <img src={playBtn} alt='play' />
                         Play
                     </button>
                 }

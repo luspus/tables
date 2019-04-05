@@ -2,8 +2,8 @@ import React, { Component }  from 'react';
 import { connect } from 'react-redux';
 import ACTIONS from '../actions/';
 
-import clean from '../img/no-stopping.png';
-import update from '../img/update.png';
+import clean from '../assets/img/no-stopping.png';
+import update from '../assets/img/update.png';
 
 class BottomTableNav extends Component {
     render () {
@@ -11,11 +11,11 @@ class BottomTableNav extends Component {
         return(
             <div className='navbar__btn right'>
                 <button>
-                    <img src={update} />
+                    <img src={update} alt='update' />
                     Undo
                 </button>
                 <button onClick={() => cleanAll()}>
-                    <img src={clean} />
+                    <img src={clean} alt='clean' />
                     Clean
                 </button>
             </div>
