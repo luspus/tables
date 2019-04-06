@@ -91,7 +91,7 @@ class PopupTable extends Component {
     render () {
         const { togglePopup, saveTable } = this.props;
         return(
-            <div className='popup'>
+            <div className='popup table'>
                 <div className='layer' />
                 <table>
                     <tbody>

@@ -4,12 +4,14 @@ import Thead from './Thead';
 
 function Table (props) {
     return (
-        <table>
-            <tbody>
-                <Thead />
-                <RowTopTable {...props}/>
-            </tbody>
-        </table>
+        <div className='table'>
+            <table>
+                <tbody>
+                    <Thead />
+                    <RowTopTable {...props}/>
+                </tbody>
+            </table>
+        </div>
     )
 }
 

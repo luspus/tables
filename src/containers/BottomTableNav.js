@@ -27,4 +27,4 @@ const mapDispatchToProps = dispatch => ({
     cleanAll: () => dispatch(ACTIONS.cleanAll()),
 });
 
-export default connect(null, mapDispatchToProps)(BottomTableNav)
+export default connect(null, mapDispatchToProps)(BottomTableNav);
